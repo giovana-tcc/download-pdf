@@ -7,6 +7,11 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
+import { File } from '@ionic-native/file';
+import { FileTransfer } from '@ionic-native/file-transfer';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
+import { FileOpener } from '@ionic-native/file-opener';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -14,6 +19,7 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
+    PdfViewerModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -24,6 +30,9 @@ import { HomePage } from '../pages/home/home';
   providers: [
     StatusBar,
     SplashScreen,
+    FileTransfer,
+    FileOpener,
+    File,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
